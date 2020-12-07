@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
         - name: jenkins
-          image: jenkins/jenkins:2.190.2
+          image: mahmoodabuawwad/myjenkins 
           env:
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
           ports:
             - name: http-port
-              containerPort: 8082
+              containerPort: 8080
             - name: jnlp-port
               containerPort: 50000
           volumeMounts:
