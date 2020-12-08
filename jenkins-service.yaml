@@ -10,5 +10,10 @@ spec:
  - port: 8080
    protocol: TCP
    nodePort: 30017
+   name: app
+ - port: 50000
+   protocol: TCP
+   nodePort: 30018
+   name: jnlp
  selector:
   app: jenkins
