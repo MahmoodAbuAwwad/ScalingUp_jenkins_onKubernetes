@@ -21,5 +21,5 @@ I use myJenkinsImage from Dockerfile and Jenkins 2.263.2 from JenkinsRepo.
 
 setup kubernetes as cloud - where
  * Kubernetes URL---> kubectl cluster-info 
- * Jenkins URL --> kubectl describe <JenkinsPod> | grep IP
+ * Jenkins URL --> kubectl describe <JenkinsPod> | grep IP  --> IP of jenkins Pod
 
