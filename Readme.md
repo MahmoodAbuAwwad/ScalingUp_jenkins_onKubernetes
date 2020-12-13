@@ -25,6 +25,12 @@ setup kubernetes as cloud - where
 
 
 
+
+
+-------------------------------------
+
+
+
 * In case the Jenkins master is outside the cluster (not pod inside Cluster)
 	u need to add credentials( or certificate ) inside kubernetes configrations in jenkins ui
 
