@@ -30,4 +30,5 @@ setup kubernetes as cloud - where
 
 U need to use certificates as Credentials to your jenkikns configrations
 Please see https://paranoiaque.fr/en/2019/07/14/run-jenkins-jobs-on-kubernetes/
+
 use jenkinsci/jnlp-slave as pod template's Image
