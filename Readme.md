@@ -31,10 +31,9 @@ setup kubernetes as cloud - where
 
 
 
-In case the Jenkins master is outside the cluster (not pod inside Cluster)
-	u need to add credentials( or certificate ) inside kubernetes configrations in jenkins ui
+In case the Jenkins master is outside the cluster (not a pod inside Cluster)
 
-U need to use certificates as Credentials to your jenkikns configrations
+U need to use certificates as Credentials to your jenkikns configrations in UI
 Please see https://paranoiaque.fr/en/2019/07/14/run-jenkins-jobs-on-kubernetes/
 
 use jenkinsci/jnlp-slave as pod template's Image
