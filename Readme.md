@@ -43,9 +43,13 @@ Please see https://paranoiaque.fr/en/2019/07/14/run-jenkins-jobs-on-kubernetes/
 
 
 CONFIG=".kube/config"
+
 echo -n $(cat $CONFIG | grep certificate-authority-data | cut -d: -f2) | base64 -d > ca.crt
+
 echo -n $(cat $CONFIG | grep client-certificate-data | cut -d: -f2) | base64 -d > client.crt
+
 echo -n $(cat $CONFIG | grep client-key-data | cut -d: -f2) | base64 -d > client.key
+
 openssl pkcs12 -export -out cert.pfx -inkey client.key -in client.crt -certfile ca.crt
 
 
