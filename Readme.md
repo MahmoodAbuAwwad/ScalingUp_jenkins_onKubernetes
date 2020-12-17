@@ -28,12 +28,36 @@ setup kubernetes as cloud - where
 
 
 -------------------------------------
+-----------------------------------
 
 
 
 In case the Jenkins master is outside the cluster (not a pod inside Cluster)
 
+
+
 U need to use certificates as Credentials to your jenkikns configrations in UI
 Please see https://paranoiaque.fr/en/2019/07/14/run-jenkins-jobs-on-kubernetes/
+
+
+
+
+CONFIG=".kube/config"
+echo -n $(cat $CONFIG | grep certificate-authority-data | cut -d: -f2) | base64 -d > ca.crt
+echo -n $(cat $CONFIG | grep client-certificate-data | cut -d: -f2) | base64 -d > client.crt
+echo -n $(cat $CONFIG | grep client-key-data | cut -d: -f2) | base64 -d > client.key
+openssl pkcs12 -export -out cert.pfx -inkey client.key -in client.crt -certfile ca.crt
+
+
+rm client.crt client.key
+
+-----------------
+* Enter the following parameters:
+
+Kubernetes URL: your Kubernetes server API url, you can find it in .kube/config, line server
+Kubernetes server certificate key: the content of the previously generated file ca.crt
+Credentials: select your Kubernetes certificate, the one we have added previously
+Jenkins URL: the URL to access to your Jenkins server
+
 
 use jenkinsci/jnlp-slave as pod template's Image
