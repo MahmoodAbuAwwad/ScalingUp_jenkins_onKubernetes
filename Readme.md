@@ -55,8 +55,11 @@ rm client.crt client.key
 * Enter the following parameters:
 
 Kubernetes URL: your Kubernetes server API url, you can find it in .kube/config, line server
+
 Kubernetes server certificate key: the content of the previously generated file ca.crt
+
 Credentials: select your Kubernetes certificate, the one we have added previously
+
 Jenkins URL: the URL to access to your Jenkins server
 
 
