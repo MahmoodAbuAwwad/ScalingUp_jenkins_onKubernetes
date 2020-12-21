@@ -68,3 +68,4 @@ Jenkins URL: the URL to access to your Jenkins server
 
 
 use jenkinsci/jnlp-slave as pod template's Image
+open port 40241 on master jenkins
